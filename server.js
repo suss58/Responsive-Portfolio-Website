@@ -15,18 +15,16 @@ const transporter = nodemailer.createTransport({
   // Example: Gmail SMTP
   service: 'gmail',
   auth: {
-    user: 'starktony13244@gmail.com',
-    pass: 'aitkhngdsfmsdush',
+    user: '',
+    pass: '',
   }
 });
 
 const oauth2Client = new google.auth.OAuth2(
-  '800555051383-c44aoh01jrdtm7u36diu4q5autkn3t8t.apps.googleusercontent.com',
-  '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',
-  'http://127.0.0.1:5500/auth/google/callback'
+
 );
 
-const scopes = ['https://www.googleapis.com/auth/userinfo.email'];
+const scopes = [''];
 
 // Regular expression pattern for email validation
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -89,7 +87,7 @@ app.post('/submit', async (req, res) => {
 
     // Send email notification
     const mailOptions = {
-      from: 'starktony13244@gmail.com',
+      from: '',
       to: email,
       subject: 'Form Submission Confirmation',
       text: 'Thank you for submitting the form!',
